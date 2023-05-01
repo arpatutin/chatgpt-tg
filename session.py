@@ -1,6 +1,8 @@
-from config import OPENAI_MODEL
+from config import OPENAI_MODEL, OPENAI_KEY
 
 import openai
+
+
 openai.api_key = OPENAI_KEY
 ans = openai.ChatCompletion.create(
   model="gpt-3.5-turbo",
