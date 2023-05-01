@@ -8,6 +8,7 @@ from locales.en import *
 
 bot = telebot.TeleBot(TELEGRAM_KEY)
 locales = {}  # User ID: locale
+sessions = {}
 
 
 # db
