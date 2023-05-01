@@ -1,3 +1,5 @@
-OPENAI_KEY = "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"
+import os
+
+OPENAI_KEY = os.getenv("OPENAI_KEY")
 OPENAI_MODEL = "gpt-3.5-turbo"
-TELEGRAM_KEY = "6205464377:AAHCNFDTbvMUaSbs2rAT08FaCVKe2u9EJcw"
+TELEGRAM_KEY = os.getenv("TELEGRAM_KEY")
