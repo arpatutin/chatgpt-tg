@@ -2,7 +2,7 @@ from telebot.types import *
 import telebot
 
 
-from config import *
+from config import TELEGRAM_KEY
 from locales.ru import *
 from locales.en import *
 
