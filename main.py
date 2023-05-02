@@ -20,9 +20,10 @@ def set_locale(call: CallbackQuery):
     if call.data in ["set_ru_locale", "set_en_locale"]:
         if call.data == "set_ru_locale":
             locales[call.from_user.id] = ru_locale
+            bot.answer_callback_query(call.id, "Успешно!")
         elif call.data == "set_en_locale":
             locales[call.from_user.id] = en_locale
-        bot.answer_callback_query(call.id, "OK")
+            bot.answer_callback_query(call.id, "Success!")
         bot.send_message(call.message.chat.id, locales[call.from_user.id]["HELLO"])
         bot.send_message(call.message.chat.id, locales[call.from_user.id]["HELP"])
 
