@@ -31,8 +31,8 @@ def set_locale(call: CallbackQuery):
 def start(message: Message):
     if locales.get(message.from_user.id) is None:
         markup = InlineKeyboardMarkup()
-        markup.add(InlineKeyboardButton("Русский", callback_data="set_ru_locale"))
-        markup.add(InlineKeyboardButton("English", callback_data="set_en_locale"))
+        markup.add(InlineKeyboardButton("Русский🇷🇺", callback_data="set_ru_locale"))
+        markup.add(InlineKeyboardButton("English🇺🇸", callback_data="set_en_locale"))
         bot.send_message(message.chat.id, "Choose your language / Выберите свой язык", reply_markup=markup)
 
 
