@@ -26,7 +26,7 @@ def set_locale(call: CallbackQuery):
         actives[call.from_user.id] = [False]
         write_to_actives(call.from_user.id, [False])
         bot.send_message(call.message.chat.id, locales[call.from_user.id]["HELLO"])
-        bot.send_message(call.message.chat.id, locales[call.from_user.id]["HELP"])
+        bot.send_message(call.message.chat.id, locales[call.from_user.id]["HELP"], parse_mode="Markdown")
     else:
         actives[call.from_user.id] = [True, sessions[call.from_user.id][call.data.replace('-', ' ')]]
         bot.answer_callback_query(call.id, locales[call.from_user.id]["SUCCESS"])
@@ -43,7 +43,7 @@ def start(message: Message):
 
 @bot.message_handler(commands=["help"])
 def help_(message: Message):
-    bot.send_message(message.chat.id, locales[message.from_user.id]["HELP"])
+    bot.send_message(message.chat.id, locales[message.from_user.id]["HELP"], parse_mode="Markdown")
 
 
 @bot.message_handler(commands=["startconversation"])
