@@ -4,7 +4,8 @@ en_locale = {
             "menu.\n/startconversation - create a new chat. A chat is an object that "
              "saves your messages not to loose a context.\n/quitconversation - leave chat. It'll be saved and "
              "you'll be able to reopen it later\n/rejoinconversation - reopen a previously closed "
-             "conversation.",
+             "conversation.\n*You can also just write to the chat, without any commands. But in this case the history "
+             "won't be saved.*",
     "SESSION_BASE_TITLE": "Session since %d.%m.%Y, %H:%M:%S",
     "SESSION_OPEN": "The session's opened! Now you can freely talk to the AI.",
     "SESSION_ALREADY_OPEN": "Can't open a session. Close the active one first, with /quitconversation.",
