@@ -90,6 +90,8 @@ def textmessage(message: Message):
         msg = bot.send_message(message.chat.id, locales[message.from_user.id]["PLEASE_WAIT"], parse_mode='Markdown')
         session = actives[message.from_user.id][1]
         answer = session.new_message(message.text)
+        if answer == -1:
+            answer = locales[message.from_user.id]["ERROR"]
         if message.from_user.id not in sessions:
             sessions[message.from_user.id] = {}
         sessions[message.from_user.id][session.title] = session
