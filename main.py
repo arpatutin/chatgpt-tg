@@ -96,13 +96,15 @@ def textmessage(message: Message):
             sessions[message.from_user.id] = {}
         sessions[message.from_user.id][session.title] = session
         write_to_sessions(message.from_user.id, session)
-        bot.edit_message_text(chat_id=message.chat.id, text=answer, message_id=msg.id)
+        bot.delete_message(message.chat.id, msg.id)
+        bot.send_message(message.chat.id, answer)
     else:
         msg = bot.send_message(message.chat.id, locales[message.from_user.id]["PLEASE_WAIT"], parse_mode='Markdown')
         answer = Session.ask_ai(message.text)
         if answer == -1:
             answer = locales[message.from_user.id]["ERROR"]
-        bot.edit_message_text(chat_id=message.chat.id, text=answer, message_id=msg.id)
+        bot.delete_message(message.chat.id, msg.id)
+        bot.send_message(message.chat.id, answer)
 
 
 bot.polling(non_stop=True)
